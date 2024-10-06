@@ -1,4 +1,4 @@
-name: CI
+name: CI test
 on:
    # События, которые запускают jobs
     push:
