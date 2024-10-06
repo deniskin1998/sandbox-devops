@@ -1,4 +1,4 @@
-name: CI
+name: CI test
 on:
    # События, которые запускают jobs
     push:
@@ -9,6 +9,7 @@ jobs_build:
     runs-on: ubuntu-latest
     steps:
     # Название job вы можете назвать как угодно
+      - uses: actions/checkout@v4
       - name: Build and Run docker selenium test
         run: |
             docker build -t images-test --no-cache .
