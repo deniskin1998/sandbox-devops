@@ -40,4 +40,4 @@ jobs:
      - name: Docker images
        run: |
         docker pull vedenindenis/selenium:latest
-        docker run --rm -d -it --name selenium selenium
+        docker run --rm -d -it --name selenium selenium:latest
