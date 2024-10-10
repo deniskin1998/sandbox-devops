@@ -16,16 +16,16 @@ jobs:
             password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       # Название job вы можете назвать как угодно
-        - uses: actions/checkout@v4
+       # - uses: actions/checkout@v4
         
-        - name: Set up Docker Buildx
-          uses: docker/setup-buildx-action@v3
+      #  - name: Set up Docker Buildx
+     #     uses: docker/setup-buildx-action@v3
    
-        - name: Build and push
-          uses: docker/build-push-action@v6
-          with:
-            push: true
-            tags: ${{ vars.var1 }}/selenium:latest
+    #    - name: Build and push
+   #       uses: docker/build-push-action@v6
+  #        with:
+ #           push: true
+#            tags: ${{ vars.var1 }}/selenium:latest
            # run: docker build . --file Dockerfile --tag selenium:$(date +%s)	
   test_run:
     needs: [ build ]
