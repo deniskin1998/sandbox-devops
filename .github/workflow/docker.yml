@@ -2,7 +2,6 @@ name: CI test
 on:
    # События, которые запускают jobs
     push:
-      branches: ["develop"]
 
 # jobs запускаются параллельно, если не указана последовательность
 jobs_build:
