@@ -11,4 +11,4 @@ jobs:
       - name: Build and Run docker images
         run: |
           docker build -t images-test --no-cache .
-          docker run --rm --name selenium images-test
+          docker run --rm --name selenium2 images-test
