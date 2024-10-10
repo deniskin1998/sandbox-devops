@@ -20,7 +20,7 @@ jobs:
         
         - name: Set up Docker Buildx
           uses: docker/setup-buildx-action@v3
-
+   
         - name: Build and push
           uses: docker/build-push-action@v6
           with:
@@ -28,5 +28,10 @@ jobs:
             tags: ${{ vars.var1 }}/selenium:latest
            # run: docker build . --file Dockerfile --tag selenium:$(date +%s)
 	
-	- name: Docker images
-	  run: docker images
+  test_run:
+    runs-on: self-hosted
+    steps:
+     - name: Docker images
+       run: |
+        docker pull vedenindenis/selenium:latest
+        docker run --rm -d -it --name selenium selenium
