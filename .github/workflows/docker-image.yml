@@ -28,6 +28,7 @@ jobs:
             tags: ${{ vars.var1 }}/selenium:latest
            # run: docker build . --file Dockerfile --tag selenium:$(date +%s)	
   test_run:
+    needs: build
     runs-on: self-hosted
     steps:
      - name: Docker images
