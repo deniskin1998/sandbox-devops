@@ -1,0 +1,14 @@
+name: Docker Image CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Build and Run docker images
+        run: |
+          docker build -t images-test --no-cache .
+          docker run --rm --name selenium images-test
