@@ -31,6 +31,12 @@ jobs:
     needs: [ build ]
     runs-on: self-hosted
     steps:
+     - name: Login to Docker Hub
+       uses: docker/login-action@v3
+       with:
+         username: ${{ vars.var1}}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
      - name: Docker images
        run: |
         docker pull vedenindenis/selenium:latest
