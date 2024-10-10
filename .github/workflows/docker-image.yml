@@ -27,3 +27,6 @@ jobs:
             push: true
             tags: ${{ vars.var1 }}/selenium:latest
            # run: docker build . --file Dockerfile --tag selenium:$(date +%s)
+	
+	- name: Docker images
+	  run: docker images
