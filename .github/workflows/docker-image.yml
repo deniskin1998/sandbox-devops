@@ -25,5 +25,5 @@ jobs:
           uses: docker/build-push-action@v6
           with:
             push: true
-            tags: ${{ vars.var1 }}/selenium:$(date +%s)
+            tags: ${{ vars.var1 }}/selenium:${{ steps.vars.outputs.tag }}
            # run: docker build . --file Dockerfile --tag selenium:$(date +%s)
