@@ -6,8 +6,16 @@ on:
 
 jobs:
   test:
-    runs-on: self-hosted
+    runs-on: ubuntu-22.04
     steps:
+      - uses: actions/checkout@v4
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+         username: ${{ vars.var1}}
+         password: ${{ secrets.DOCKERHUB_TOKEN }}
+         
       - name: Build and Run docker images
         run: |
           docker build -t images-test --no-cache .
